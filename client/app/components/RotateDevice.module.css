@@ -1,0 +1,43 @@
+.screen {
+  display: none;
+}
+
+/* Portrait: cover everything with the "turn your device" screen. */
+@media (orientation: portrait) {
+  .screen {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    background: var(--background);
+  }
+}
+
+.art {
+  width: min(60vw, 60vh, 320px);
+  height: auto;
+}
+
+.tablet {
+  transform-origin: 100px 90px;
+  animation: turn 2.4s ease-in-out infinite;
+}
+
+@keyframes turn {
+  0%,
+  25% {
+    transform: rotate(0deg);
+  }
+  65%,
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tablet {
+    animation: none;
+    transform: rotate(-90deg);
+  }
+}

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Fredoka } from "next/font/google";
 import "./globals.css";
+import RotateDevice from "./components/RotateDevice";
 
 // Fredoka: round, chunky, playful, with Hebrew support.
 // next/font downloads the font at build time and serves it from our own
@@ -26,7 +27,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="he" dir="rtl" className={fredoka.variable}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <RotateDevice />
+      </body>
     </html>
   );
 }
