@@ -20,6 +20,9 @@
 # production
 /build
 
+# local HTTPS certificates (private keys, never commit)
+/certs/
+
 # misc
 .DS_Store
 *.pem
