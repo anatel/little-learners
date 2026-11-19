@@ -20,6 +20,12 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Landscape and install
+
+- `app/manifest.ts` makes the app installable. On Android Chrome ("Install app"), the installed app opens full screen and is locked to landscape. Its icons are `public/icons/icon-192.png` and `icon-512.png` (maskable: the owl from `app/icon.svg` on a full sand square).
+- Browsers can't lock orientation in a plain tab or on iPhone/iPad, so in portrait the root layout shows a "turn your device" screen (`app/components/RotateDevice.tsx`, pure CSS). Turning the device back shows the app again, with no reload.
+- Installing on a real device over plain `http://` may only work as a shortcut; HTTPS comes with LL-15.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
